@@ -1,0 +1,35 @@
+{
+"manifest_version": 2,
+"name": "Analyser",
+"version": "1.3.8",
+"icons": {
+ 	"128": "icons/icon.png"
+},
+	
+"background": {
+	"scripts": ["background.js"]
+ },
+ "permissions": [
+	"tabs",
+	"storage",
+	"contextMenus",
+	"background",
+	"activeTab",
+	"https://www.appodeal.com/*",
+	"https://www.appodeal.ru/*"
+],
+"content_scripts":[{
+	"matches": [
+		"https://www.appodeal.ru/dashboard?*",
+		"https://www.appodeal.com/dashboard?*"
+	],
+	"js": [
+		"library/jquery.js",
+		"script.js"
+	]
+}],
+"browser_action": {
+	"default_title": "Analyser",
+	"default_icon": "icons/icon.png"
+  }
+}
